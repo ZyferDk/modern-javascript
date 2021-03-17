@@ -20,10 +20,13 @@
       padding: 4px;
     }
     .success{
-      border: 2px solid limegreen;
+      background: limegreen;
     }
     .error{
-      border: 2px solid crimson;
+      background: crimson;
+    }
+    .feedback{
+      font-size: 11px;
     }
   </style>
 </head>
@@ -31,8 +34,8 @@
 
   <form class="signup-form">
     <input type="text" id="username" placeholder="username">
-    <input type="submit" value="submit">
     <div class="feedback"></div>
+    <input type="submit" value="submit">
   </form>
   
   <script src="sandbox.js"></script>

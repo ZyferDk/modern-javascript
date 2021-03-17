@@ -1,6 +1,6 @@
 const form = document.querySelector('.signup-form');
 const feedback = document.querySelector('.feedback');
-const usernamePattern = /^[a-zA-Z]{6,12}$/;
+const usernamePattern = /^[a-zA-Z\s]{6,12}$/;
 
 // validation
 form.addEventListener('submit', e => {
@@ -10,19 +10,21 @@ form.addEventListener('submit', e => {
 
   if(usernamePattern.test(username)){
     feedback.textContent = 'that username is valid!'
-  } else {
-    feedback.textContent = 'username must contain only letters & be between 6 & 12 characters';
   }
 });
 
 // live feedback
 form.username.addEventListener('keyup', e => {
-  // console.log(e.target.value, form.username.value);
+  console.log(e.target.id);
   if(usernamePattern.test(e.target.value)){
-    //console.log('passed');
+    // console.log('passed');
     form.username.setAttribute('class', 'success');
+    feedback.textContent = 'great!'
+    feedback.style.color = 'green';
   } else {
     //console.log('failed');
     form.username.setAttribute('class', 'error');
+    feedback.textContent = 'error!';
+    feedback.style.color = 'red';
   }
 });
