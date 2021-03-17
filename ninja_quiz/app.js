@@ -1,5 +1,11 @@
 const correctAnswers = ['B', 'A', 'B', 'B', 'A'];
 const form = document.querySelector('.quiz-form');
+const result = document.querySelector('.result');
+
+let ajidk = form.querySelectorAll('.lead');
+// ajidk.forEach(type => console.log(type))
+console.log(ajidk[0].innerText);
+
 
 form.addEventListener('submit', e => {
     e.preventDefault();
@@ -15,6 +21,10 @@ form.addEventListener('submit', e => {
     });
 
     // log the score to console
+    console.log(result.querySelector('span'));
+    result.querySelector('span').textContent = `${score}%`;
+    result.classList.remove('d-none')
+
     console.log(score);
 
 });
