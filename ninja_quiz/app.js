@@ -1,26 +1,41 @@
 const correctAnswers = ['B', 'B', 'B', 'B'];
 const form = document.querySelector('.quiz-form');
 const result = document.querySelector('.result');
+const submit = document.querySelector('.submit');
+
+// submit.addEventListener('click', () => {
+//     console.log('bismillah');
+// setInterval(() => {
+//     submit.scrollTop = 0;
+// },2000)
+// submit.scrollTop = 0;
+// })
 
 form.addEventListener('submit', e => {
-  e.preventDefault();
+    e.preventDefault();
 
-  let score = 0;
-  const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value];
+    let score = 0;
+    const userAnswers = [form.q1.value, form.q2.value, form.q3.value, form.q4.value];
 
-  // check the answers
-  userAnswers.forEach((answer, index) => {
-    if (answer === correctAnswers[index]){
-      score += 25;
-    }
-  });
+    // check the answers
+    userAnswers.forEach((answer, index) => {
+        if (answer === correctAnswers[index]) {
+            score += 25;
+        }
+    });
 
-  // show the result
-  scrollTo(0, 0);
-  result.querySelector('span').textContent = `${score}%`;
-  result.classList.remove('d-none');
-
+    // show the submit
+    // scrollTo(0, 0),
+    result.querySelector('span').textContent = `${score}%`;
+    result.classList.remove('d-none');
 });
+
+submit.addEventListener('click', () => window.scrollTo({
+    top: 0,
+    behavior: 'smooth',
+}));
+
+
 
 // window object (the global object)
 
@@ -32,9 +47,9 @@ form.addEventListener('submit', e => {
 // console.log(document.querySelector('form'));
 // console.log(window.document.querySelector('form'));
 
-// // alert('hello');
-// // window.alert('hello again');
+// alert('hello');
+// window.alert('hello again');
 
-// setTimeout(() => {
-//   alert('hello, ninjas');
-// }, 3000);
+setTimeout(() => {
+    console.log('sok pasti bisa kok');
+}, 1000);
